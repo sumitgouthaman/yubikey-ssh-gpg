@@ -17,6 +17,12 @@ On new computers, the SSH client won't know that it should use the Yubikey. Here
 
 1. Copy `.gnupg/gpg-agent.conf` and `.gnupg/sshcontrol` to the new computer's ~/.gnupg folder.
 
+    (If not available)
+
+    For `.gnupg/gpg-agent.conf`, check if it already exists, if not create it and add line `enable-ssh-support` to it.
+
+    For `.gnupg/sshcontrol`, first list available keygrips using `gpg -K --with-keygrip`. Then add keygrips of keys you want for SSH to `.gnupg/sshcontrol`.
+
 2. Import the private / public keys:
 
     ```sh
